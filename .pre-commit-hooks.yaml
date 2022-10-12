@@ -1,0 +1,17 @@
+---
+- id: tanka_validate
+  name: Tanka validate
+  description: This hook runs `tk diff --diff-strategy=validate` on appropriate files.
+  entry: hooks/tanka-validate.sh
+  language: script
+  files: (\.jsonnet)$
+  pass_filenames: true
+  always_run: true
+
+- id: tanka_lint
+  name: Tanka lint
+  description: This hook runs `tk lint` on appropriate files.
+  entry: hooks/packer_fmt.sh
+  language: script
+  files: (\.jsonnet)$
+  pass_filenames: true
