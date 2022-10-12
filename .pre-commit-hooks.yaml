@@ -11,7 +11,7 @@
 - id: tanka_lint
   name: Tanka lint
   description: This hook runs `tk lint` on appropriate files.
-  entry: hooks/packer_fmt.sh
+  entry: hooks/tanka-lint.sh
   language: script
   files: (\.jsonnet)$
   pass_filenames: true
