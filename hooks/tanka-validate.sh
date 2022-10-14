@@ -11,6 +11,9 @@ fi
 
 error=0
 
+# tk diff will hang otherwise
+export KUBECTL_INTERACTIVE_DIFF=0
+
 for file in "$@"; do
   if ! tk diff --diff-strategy=validate "$file"; then
     error=1
@@ -19,6 +22,8 @@ for file in "$@"; do
     echo "================================"
   fi
 done
+
+unset KUBECTL_INTERACTIVE_DIFF
 
 if [[ $error -ne 0 ]]; then
   exit 1
