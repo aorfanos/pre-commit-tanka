@@ -6,7 +6,6 @@
   language: script
   files: (\.jsonnet)$
   pass_filenames: true
-  always_run: true
 
 - id: tanka_lint
   name: Tanka lint
@@ -15,3 +14,4 @@
   language: script
   files: (\.jsonnet)$
   pass_filenames: true
+  always_run: true
